@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符与reset参数</title>
+</head>
+<body>
+    <script>
+        function connect({host,port,...user}){
+            console.log(host)
+            console.log(port)
+            console.log(user)
+        }
+        connect({
+            host: 'localhost',
+            port: 3306,
+            username: 'root',
+            password: 'root',
+            type: 'master'
+        })
+
+        const o1 = {
+            name: 'shine',
+        }
+        const o2 = {
+            age: 18,
+        }
+        const o = {...o1,...o2}
+        console.log(o)
+    </script>
+</body>
+</html>
